@@ -5,14 +5,12 @@
         <tr>
             <th>Lecture</th>
             <th>Description</th>
-            {{-- <th>Average</th> --}}
             <th>Actions</th>
         </tr>
         @foreach ($lectures as $lecture)
         <tr>
             <td>{{ $lecture->name }}</td>
             <td>{{ $lecture->description }}</td>
-            {{-- <td>{{ $lecture->  }}</td> --}}
             <td>
                 <form action={{ route('lectures.destroy', $lecture->id) }} method="POST">
                     <a class="btn btn-success" href={{ route('lectures.edit', $lecture->id) }}>Edit</a>
@@ -25,7 +23,7 @@
         @endforeach
     </table>
     <div>
-        <a href="{{ route('lecture.create') }}" class="btn btn-success">Add new lecture</a>
+        <a href="{{ route('lectures.create') }}" class="btn btn-success">Add new lecture</a>
     </div>
 </div>
 @endsection

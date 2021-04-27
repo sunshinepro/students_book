@@ -14,7 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return view('students.index', ['student' => Student::orderBy('surname')->get()]);
+        return view('students.index', ['students' => Student::orderBy('surname')->get()]);
+        
 
     }
 
@@ -25,8 +26,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-          // ATTENTION :: we need countries to be able to assign them
-          // $countries = \App\Models\Country::orderBy('title')->get();
+         
         return view('students.create');
 
     }
@@ -68,7 +68,7 @@ class StudentController extends Controller
     public function edit(Student $student)
     {
             // ATTENTION :: we need countries to be able to assign them
-            // $countries = \App\Models\Country::orderBy('title')->get();
+         $students = \App\Models\Student::all();
         return view('students.edit', ['student' => $student]);
 
     }

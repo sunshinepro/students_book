@@ -4,23 +4,19 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Pakeiskime šalies informaciją</div>
+                <div class="card-header">Edit lecture information</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('country.update', $country->id) }}">
+                    <form method="POST" action="{{ route('lectures.update', $lecture->id) }}">
                         @csrf @method("PUT")
                         <div class="form-group">
-                            <label for="">Pavadinimas</label>
-                            <input type="text" name="title" class="form-control" value="{{ $country->title }}">
+                            <label for="">Name</label>
+                            <input type="text" name="name" class="form-control" value="{{ $lecture->name }}">
                         </div>
                         <div class="form-group">
-                            <label for="">Atstumas</label>
-                            <input type="text" name="distance" class="form-control" value="{{ $country->distance }}">
+                            <label for="">Description</label>
+                            <textarea type="text" name="description" rows=10 cols=100 class="form-control">{{ $lecture->description }}</textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="">Aprašas</label>
-                            <textarea type="text" name="description" rows=10 cols=100 class="form-control">{{ $country->description }}</textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Pakeisti</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
                     </form>
                 </div>
             </div>

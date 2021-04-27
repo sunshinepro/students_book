@@ -33,7 +33,17 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        {{-- @auth --}}
+                        <li class="nav-item">
+                            <a href="{{ route('lectures.index') }}" class="nav-link">Lectures</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('students.index') }}" class="nav-link">Students</a>
+                        </li>   
+                        <li class="nav-item">
+                            <a href="{{ route('grades.index') }}" class="nav-link">Grades</a>
+                        </li>   
+                        {{-- @endauth  --}}
                     </ul>
 
                     <!-- Right Side Of Navbar -->

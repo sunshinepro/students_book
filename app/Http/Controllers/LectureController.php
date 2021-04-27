@@ -25,7 +25,6 @@ class LectureController extends Controller
     public function create()
     {
         return view('lectures.create');
-
     }
 
     /**
@@ -37,13 +36,12 @@ class LectureController extends Controller
     public function store(Request $request)
     {
         $lecture = new Lecture();
-        // can be used for seeing the insides of the incoming request
-            // dd($request->all()); die();
            $lecture->fill($request->all());
            $lecture->save();
            return redirect()->route('lectures.index');
     
     }
+
 
     /**
      * Display the specified resource.
